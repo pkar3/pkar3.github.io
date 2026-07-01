@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Prachi Kar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <nav class="site-nav">
+    <div class="site-nav__inner">
+      <a href="index.html" class="site-nav__mark">PK<span>.</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <ul class="site-nav__links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero" style="padding: 5rem 0 3.5rem;">
+    <div class="hero__bg"></div>
+    <div class="hero__contours"></div>
+    <div class="hero__inner fade-in">
+      <span class="eyebrow">Research</span>
+      <h1 style="font-size: clamp(2rem, 4vw, 3rem); margin-top: 0.5rem;">What I study, and why</h1>
+      <p class="hero__intro">
+        My work sits at the intersection of geodynamics and planetary habitability — using
+        numerical modeling to understand how the deep interiors of Earth and other planetary
+        bodies evolve, and how that evolution is coupled to what happens at the surface.
+      </p>
+      <ul class="tag-row">
+        <li>Planetary Interiors</li>
+        <li>Mantle Convection</li>
+        <li>Geodynamics</li>
+        <li>Deep Earth Structure</li>
+        <li>Lunar Interior</li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container--wide">
+        <div class="section__head">
+          <span class="eyebrow">Active projects</span>
+          <h2>Current research</h2>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <span class="card__index">01</span>
+            <h3>Long-term survival of LLVPs</h3>
+            <p>Large Low-Velocity Provinces (LLVPs) are massive structures at the base of
+              Earth's mantle whose longevity has been hard to explain. I use mantle convection
+              models to show that internal layering can stabilize LLVPs and allow them to
+              persist over geologic timescales — published in <em>Physics of the Earth and
+              Planetary Interiors</em> (2025).</p>
+          </div>
+          <div class="card">
+            <span class="card__index">02</span>
+            <h3>Core-derived materials in mantle dynamics</h3>
+            <p>Investigating how lighter materials released from Earth's core influence
+              patterns of mantle convection, connecting core-mantle boundary chemistry to
+              large-scale mantle dynamics.</p>
+          </div>
+          <div class="card">
+            <span class="card__index">03</span>
+            <h3>Hemispheric thermal dichotomy in the lunar mantle</h3>
+            <p>Modeling the striking asymmetry between the Moon's near and far side to
+              understand what it reveals about the lunar mantle's thermal and compositional
+              evolution — presented at EGU 2026.</p>
+          </div>
+          <div class="card">
+            <span class="card__index">04</span>
+            <h3>Hydrogen and nitrogen storage in mantle coesite</h3>
+            <p>Working with Prof. Sang-Heon Shim on the coupled storage of hydrogen and
+              nitrogen in coesite, relevant to volatile cycling in Earth's mantle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Methods & tools</span>
+          <h2>How I work</h2>
+        </div>
+        <p>
+          I build numerical mantle convection models using CitcomS and Citcom2D, with
+          computational work in C and Python and mapping/visualization via GMT (Generic
+          Mapping Tools). I also have experimental experience with multi-anvil press
+          techniques, and use COMSOL Multiphysics, Origin, and Adobe Illustrator for
+          modeling and figure preparation.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <div class="site-footer__coords" data-coords></div>
+      <div class="site-footer__meta">© 2026 Prachi Kar. Built with a fondness for contour lines.</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

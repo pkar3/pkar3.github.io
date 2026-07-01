@@ -1,0 +1,553 @@
+/* =========================================================
+   DESIGN TOKENS
+   ========================================================= */
+:root {
+  /* Color — basalt & terracotta, planetary field-site palette */
+  --basalt-950: #0f0c0a;
+  --basalt-900: #171310;
+  --basalt-800: #221c17;
+  --basalt-700: #332924;
+  --basalt-600: #453832;
+
+  --terracotta-500: #c1633b;
+  --terracotta-400: #d68258;
+  --terracotta-300: #e3a184;
+
+  --stone-100: #f5f0e8;
+  --stone-300: #ded4c6;
+  --stone-500: #a89684;
+  --stone-700: #6b5d51;
+
+  /* Type */
+  --font-display: "Fraunces", "Iowan Old Style", serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", monospace;
+
+  /* Layout */
+  --nav-height: 68px;
+  --content-width: 880px;
+  --wide-width: 1100px;
+  --radius: 3px;
+}
+
+/* =========================================================
+   RESET & BASE
+   ========================================================= */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--basalt-950);
+  color: var(--stone-300);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--stone-100);
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 0.5em 0;
+}
+
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p { margin: 0 0 1.1em 0; }
+
+a {
+  color: var(--terracotta-400);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+a:hover { color: var(--terracotta-300); }
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--terracotta-400);
+  outline-offset: 3px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--stone-500);
+}
+
+.container {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container--wide {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* =========================================================
+   NAV
+   ========================================================= */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  background: rgba(15, 12, 10, 0.86);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--basalt-700);
+}
+
+.site-nav__inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-nav__mark {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--stone-100);
+}
+
+.site-nav__mark span {
+  color: var(--terracotta-400);
+}
+
+.site-nav__links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav__links a {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone-500);
+}
+
+.site-nav__links a:hover,
+.site-nav__links a[aria-current="page"] {
+  color: var(--stone-100);
+}
+
+.site-nav__links a[aria-current="page"] {
+  border-bottom: 1px solid var(--terracotta-400);
+  padding-bottom: 4px;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--basalt-600);
+  color: var(--stone-100);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-block; }
+  .site-nav__links {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: var(--basalt-900);
+    border-bottom: 1px solid var(--basalt-700);
+    flex-direction: column;
+    gap: 0;
+    display: none;
+  }
+  .site-nav__links.is-open { display: flex; }
+  .site-nav__links a {
+    padding: 14px 24px;
+    display: block;
+    border-bottom: 1px solid var(--basalt-800);
+  }
+}
+
+/* =========================================================
+   HERO / PLANETARY BACKGROUND
+   ========================================================= */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 0 5rem;
+  isolation: isolate;
+}
+
+/*
+  PLACEHOLDER PLANETARY BACKGROUND
+  ---------------------------------
+  This is a CSS/SVG stand-in (starfield + topographic contour lines)
+  until real photos are added. To swap in a real photo later:
+
+    .hero__bg {
+      background-image: linear-gradient(180deg, rgba(15,12,10,0.55), rgba(15,12,10,0.95)), url("images/your-photo.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
+  Keep the dark gradient overlay so text stays readable on top.
+*/
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(1px 1px at 8% 22%, rgba(245,240,232,0.5), transparent),
+    radial-gradient(1px 1px at 22% 68%, rgba(245,240,232,0.35), transparent),
+    radial-gradient(1.5px 1.5px at 38% 12%, rgba(245,240,232,0.4), transparent),
+    radial-gradient(1px 1px at 52% 78%, rgba(245,240,232,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 68% 34%, rgba(245,240,232,0.45), transparent),
+    radial-gradient(1px 1px at 81% 58%, rgba(245,240,232,0.3), transparent),
+    radial-gradient(1.5px 1.5px at 91% 20%, rgba(245,240,232,0.4), transparent),
+    radial-gradient(1px 1px at 14% 88%, rgba(245,240,232,0.3), transparent),
+    radial-gradient(1px 1px at 63% 91%, rgba(245,240,232,0.35), transparent),
+    linear-gradient(180deg, var(--basalt-900) 0%, var(--basalt-950) 100%);
+}
+
+.hero__contours {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.35;
+  background-image: url("images/contours.svg");
+  background-repeat: no-repeat;
+  background-position: center 30%;
+  background-size: 130% auto;
+}
+
+.hero__inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.hero__coords {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--terracotta-300);
+  letter-spacing: 0.06em;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.hero__role {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  color: var(--stone-300);
+  margin-bottom: 0.4rem;
+}
+
+.hero__institution {
+  color: var(--stone-500);
+  margin-bottom: 1.6rem;
+  font-size: 0.98rem;
+}
+
+.hero__intro {
+  max-width: 620px;
+  font-size: 1.08rem;
+  color: var(--stone-300);
+}
+
+/* Keyword tag row, Anna-Gulcher style */
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.9rem;
+  margin: 1.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag-row li {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--stone-500);
+  letter-spacing: 0.02em;
+}
+
+.tag-row li:not(:last-child)::after {
+  content: "·";
+  margin-left: 0.9rem;
+  color: var(--basalt-600);
+}
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+.section {
+  padding: 4.5rem 0;
+  border-bottom: 1px solid var(--basalt-800);
+}
+
+.section:last-of-type { border-bottom: none; }
+
+.section__head {
+  margin-bottom: 2.4rem;
+}
+
+.section__head .eyebrow {
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+/* =========================================================
+   RESEARCH CARDS
+   ========================================================= */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--basalt-900);
+  border: 1px solid var(--basalt-700);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--terracotta-500);
+  transform: translateY(-2px);
+}
+
+.card__index {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--terracotta-400);
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.card h3 { margin-bottom: 0.6rem; }
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--stone-500);
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   PUBLICATIONS
+   ========================================================= */
+.pub-year {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--terracotta-400);
+  margin: 2.2rem 0 1rem;
+  letter-spacing: 0.05em;
+}
+
+.pub-year:first-child { margin-top: 0; }
+
+.pub-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.pub-item {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--basalt-800);
+}
+
+.pub-item:last-child { border-bottom: none; }
+
+.pub-item__title {
+  color: var(--stone-100);
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+}
+
+.pub-item__meta {
+  font-size: 0.88rem;
+  color: var(--stone-500);
+  margin-bottom: 0.4rem;
+}
+
+.pub-item__links a {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 1.2rem;
+}
+
+/* =========================================================
+   CV
+   ========================================================= */
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--basalt-950);
+  background: var(--terracotta-400);
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius);
+  transition: background 0.15s ease;
+}
+
+.cv-download:hover {
+  background: var(--terracotta-300);
+  color: var(--basalt-950);
+}
+
+.cv-block {
+  margin-bottom: 2.2rem;
+}
+
+.cv-block h3 {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--stone-500);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.cv-entry {
+  margin-bottom: 1.1rem;
+}
+
+.cv-entry__title {
+  color: var(--stone-100);
+  font-weight: 600;
+}
+
+.cv-entry__meta {
+  font-size: 0.88rem;
+  color: var(--stone-500);
+}
+
+/* =========================================================
+   CONTACT
+   ========================================================= */
+.contact-links {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.contact-links a {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.contact-links a::before {
+  content: "→ ";
+  color: var(--terracotta-500);
+}
+
+/* =========================================================
+   FOOTER — coordinate readout signature
+   ========================================================= */
+.site-footer {
+  padding: 2.5rem 0;
+  border-top: 1px solid var(--basalt-800);
+}
+
+.site-footer__inner {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.site-footer__coords {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--stone-700);
+  letter-spacing: 0.04em;
+}
+
+.site-footer__coords span {
+  color: var(--terracotta-500);
+}
+
+.site-footer__meta {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  color: var(--stone-700);
+}
+
+/* =========================================================
+   UTILITY
+   ========================================================= */
+.fade-in {
+  animation: fadeIn 0.8s ease both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.btn-secondary {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--stone-300);
+  border: 1px solid var(--basalt-600);
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--radius);
+  margin-top: 1.6rem;
+}
+
+.btn-secondary:hover {
+  border-color: var(--terracotta-400);
+  color: var(--terracotta-300);
+}
