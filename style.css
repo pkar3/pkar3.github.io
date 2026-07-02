@@ -53,8 +53,8 @@ body {
   background: var(--basalt-950);
   color: var(--stone-300);
   font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 19px;
+  line-height: 1.68;
   -webkit-font-smoothing: antialiased;
 }
  
@@ -66,9 +66,9 @@ h1, h2, h3, h4 {
   margin: 0 0 0.5em 0;
 }
  
-h1 { font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; }
-h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); }
-h3 { font-size: 1.25rem; font-weight: 600; }
+h1 { font-size: clamp(2.6rem, 5.5vw, 4.4rem); font-weight: 400; }
+h2 { font-size: clamp(1.8rem, 3.2vw, 2.3rem); }
+h3 { font-size: 1.4rem; font-weight: 600; }
  
 p { margin: 0 0 1.1em 0; }
  
@@ -87,10 +87,11 @@ button:focus-visible {
  
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.9rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--stone-500);
+  color: var(--terracotta-300);
+  font-weight: 500;
 }
  
 .container {
@@ -117,7 +118,7 @@ button:focus-visible {
   padding: 12px 0;
   background: rgba(15, 12, 10, 0.86);
   backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--basalt-700);
+  border-bottom: 2px solid var(--basalt-700);
 }
  
 .site-nav__inner {
@@ -135,26 +136,23 @@ button:focus-visible {
   display: flex;
   flex-direction: column;
   line-height: 1.25;
-  gap: 2px;
+  gap: 3px;
 }
  
 .site-nav__mark-name {
   font-family: var(--font-display);
-  font-size: 1.05rem;
-  letter-spacing: 0.02em;
-  color: var(--stone-100);
+  font-size: 1.65rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #ffffff;
 }
  
 .site-nav__mark-sub {
   font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.07em;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--stone-500);
-}
- 
-.site-nav__mark span {
-  color: var(--terracotta-400);
+  color: var(--stone-300);
 }
  
 .site-nav__links {
@@ -167,7 +165,7 @@ button:focus-visible {
  
 .site-nav__links a {
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--stone-500);
@@ -179,14 +177,14 @@ button:focus-visible {
 }
  
 .site-nav__links a[aria-current="page"] {
-  border-bottom: 1px solid var(--terracotta-400);
+  border-bottom: 2px solid var(--terracotta-400);
   padding-bottom: 4px;
 }
  
 .nav-toggle {
   display: none;
   background: none;
-  border: 1px solid var(--basalt-600);
+  border: 2px solid var(--basalt-600);
   color: var(--stone-100);
   border-radius: var(--radius);
   padding: 6px 10px;
@@ -203,7 +201,7 @@ button:focus-visible {
     left: 0;
     right: 0;
     background: var(--basalt-900);
-    border-bottom: 1px solid var(--basalt-700);
+    border-bottom: 2px solid var(--basalt-700);
     flex-direction: column;
     gap: 0;
     display: none;
@@ -212,7 +210,7 @@ button:focus-visible {
   .site-nav__links a {
     padding: 14px 24px;
     display: block;
-    border-bottom: 1px solid var(--basalt-800);
+    border-bottom: 2px solid var(--basalt-800);
   }
 }
  
@@ -285,7 +283,7 @@ button:focus-visible {
  
 .hero__role {
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 1.02rem;
   letter-spacing: 0.04em;
   color: var(--stone-300);
   margin-bottom: 0.4rem;
@@ -294,12 +292,12 @@ button:focus-visible {
 .hero__institution {
   color: var(--stone-500);
   margin-bottom: 1.6rem;
-  font-size: 0.98rem;
+  font-size: 1.1rem;
 }
  
 .hero__intro {
   max-width: 620px;
-  font-size: 1.08rem;
+  font-size: 1.18rem;
   color: var(--stone-300);
 }
  
@@ -315,8 +313,8 @@ button:focus-visible {
  
 .tag-row li {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
-  color: var(--stone-500);
+  font-size: 0.95rem;
+  color: var(--stone-100);
   letter-spacing: 0.02em;
 }
  
@@ -331,7 +329,7 @@ button:focus-visible {
    ========================================================= */
 .section {
   padding: 4.5rem 0;
-  border-bottom: 1px solid var(--basalt-800);
+  border-bottom: 2px solid var(--basalt-800);
 }
  
 .section:last-of-type { border-bottom: none; }
@@ -356,7 +354,7 @@ button:focus-visible {
  
 .card {
   background: var(--basalt-900);
-  border: 1px solid var(--basalt-700);
+  border: 2px solid var(--basalt-700);
   border-radius: var(--radius);
   padding: 1.8rem;
   transition: border-color 0.2s ease, transform 0.2s ease;
@@ -369,7 +367,7 @@ button:focus-visible {
  
 .card__index {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   color: var(--terracotta-400);
   display: block;
   margin-bottom: 0.9rem;
@@ -378,7 +376,7 @@ button:focus-visible {
 .card h3 { margin-bottom: 0.6rem; }
  
 .card p {
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   color: var(--stone-500);
   margin-bottom: 0;
 }
@@ -404,7 +402,7 @@ button:focus-visible {
  
 .pub-item {
   padding: 1.1rem 0;
-  border-bottom: 1px solid var(--basalt-800);
+  border-bottom: 2px solid var(--basalt-800);
 }
  
 .pub-item:last-child { border-bottom: none; }
@@ -416,14 +414,14 @@ button:focus-visible {
 }
  
 .pub-item__meta {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--stone-500);
   margin-bottom: 0.4rem;
 }
  
 .pub-item__links a {
   font-family: var(--font-mono);
-  font-size: 0.76rem;
+  font-size: 0.86rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-right: 1.2rem;
@@ -476,7 +474,7 @@ button:focus-visible {
 }
  
 .cv-entry__meta {
-  font-size: 0.88rem;
+  font-size: 1rem;
   color: var(--stone-500);
 }
  
@@ -494,7 +492,7 @@ button:focus-visible {
  
 .contact-links a {
   font-family: var(--font-mono);
-  font-size: 0.95rem;
+  font-size: 1.08rem;
 }
  
 .contact-links a::before {
@@ -507,7 +505,7 @@ button:focus-visible {
    ========================================================= */
 .site-footer {
   padding: 2.5rem 0;
-  border-top: 1px solid var(--basalt-800);
+  border-top: 2px solid var(--basalt-800);
 }
  
 .site-footer__inner {
@@ -523,7 +521,7 @@ button:focus-visible {
  
 .site-footer__coords {
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.85rem;
   color: var(--stone-700);
   letter-spacing: 0.04em;
 }
@@ -534,7 +532,7 @@ button:focus-visible {
  
 .site-footer__meta {
   font-family: var(--font-mono);
-  font-size: 0.74rem;
+  font-size: 0.85rem;
   color: var(--stone-700);
 }
  
@@ -552,7 +550,7 @@ button:focus-visible {
   margin: 0 auto;
   border-radius: var(--radius);
   overflow: hidden;
-  border: 1px solid var(--basalt-700);
+  border: 2px solid var(--basalt-700);
   background: var(--basalt-900);
 }
  
@@ -611,7 +609,7 @@ button:focus-visible {
 .bio-grid__photo img {
   width: 100%;
   border-radius: var(--radius);
-  border: 1px solid var(--basalt-700);
+  border: 2px solid var(--basalt-700);
   display: block;
   object-fit: cover;
   aspect-ratio: 4 / 5;
@@ -631,8 +629,8 @@ button:focus-visible {
    ========================================================= */
 .section--tint {
   background: var(--basalt-900);
-  border-top: 1px solid var(--basalt-700);
-  border-bottom: 1px solid var(--basalt-700);
+  border-top: 2px solid var(--basalt-700);
+  border-bottom: 2px solid var(--basalt-700);
 }
  
 /* =========================================================
@@ -663,6 +661,123 @@ button:focus-visible {
 }
  
 /* =========================================================
+   HOMEPAGE BACKDROP SYSTEM
+   The Earthrise image sits fixed behind the whole homepage.
+   Content sits in "cards" (.home-section) with gaps between
+   them, so the backdrop is visible in those gaps as you scroll.
+   ========================================================= */
+.page-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(180deg, rgba(15,12,10,0.22) 0%, rgba(15,12,10,0.55) 45%, rgba(15,12,10,0.88) 100%),
+    url("https://www.nasa.gov/wp-content/uploads/2023/03/earth_and_limb_m1199291564l_color_2stretch_mask_0.jpg");
+  background-size: cover;
+  background-position: 75% 20%; /* keeps Earth prominent near the top */
+  background-repeat: no-repeat;
+}
+ 
+.home-hero {
+  min-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6rem 24px 4rem;
+}
+ 
+.home-hero h1 {
+  font-size: clamp(3.2rem, 8vw, 5.6rem);
+  color: #ffffff;
+  margin: 0;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.75), 0 2px 10px rgba(0,0,0,0.6);
+}
+ 
+.home-hero__role {
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  color: var(--stone-100);
+  text-shadow: 0 2px 14px rgba(0,0,0,0.75);
+}
+ 
+.home-hero__credit {
+  margin-top: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--stone-300);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.75);
+}
+ 
+.home-section {
+  position: relative;
+  max-width: var(--wide-width);
+  margin: 0 auto 3.5rem;
+  padding: 3.5rem 3rem;
+  border-radius: 8px;
+  border: 2px solid var(--basalt-700);
+  background: rgba(15, 12, 10, 0.94);
+}
+ 
+.home-section--about {
+  background: rgba(34, 28, 23, 0.95);
+}
+ 
+.home-section--research {
+  background: linear-gradient(160deg, rgba(193, 99, 59, 0.16), rgba(15, 12, 10, 0.95));
+  border-color: var(--terracotta-500);
+}
+ 
+.home-quote {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  padding: 0 24px;
+}
+ 
+.home-quote blockquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.55rem;
+  line-height: 1.6;
+  color: #ffffff;
+  text-shadow: 0 2px 16px rgba(0,0,0,0.75);
+  margin: 0 0 1.1rem;
+}
+ 
+.home-quote cite {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.06em;
+  color: var(--terracotta-300);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.7);
+  font-style: normal;
+}
+ 
+.home-footer {
+  text-align: center;
+  padding: 2.5rem 24px 3.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--stone-100);
+  text-shadow: 0 1px 10px rgba(0,0,0,0.7);
+}
+ 
+@media (max-width: 720px) {
+  .home-section {
+    margin: 0 16px 2.5rem;
+    padding: 2.5rem 1.5rem;
+  }
+  .home-hero {
+    min-height: 68vh;
+    padding: 5rem 20px 3rem;
+  }
+}
+ 
+/* =========================================================
    UTILITY
    ========================================================= */
 .fade-in {
@@ -677,11 +792,11 @@ button:focus-visible {
 .btn-secondary {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 0.82rem;
+  font-size: 0.92rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: var(--stone-300);
-  border: 1px solid var(--basalt-600);
+  border: 2px solid var(--basalt-600);
   padding: 0.65rem 1.2rem;
   border-radius: var(--radius);
   margin-top: 1.6rem;
