@@ -29,109 +29,93 @@
     </div>
   </nav>
  
-  <header class="hero-photo fade-in">
-    <div class="hero-photo__frame">
-      <img
-        src="https://assets.science.nasa.gov/dynamicimage/assets/science/psd/lunar-science/2023/08/earth_moon_galileo.jpg?w=1700&h=2164&fit=clip&crop=faces%2Cfocalpoint"
-        alt="The Earth and Moon, photographed by NASA's Galileo spacecraft in 1992"
-      />
-      <div class="hero-photo__overlay">
-        <h1>Prachi Kar</h1>
-      </div>
-    </div>
-    <p class="hero-photo__role">PhD Candidate, Geological Sciences — Arizona State University</p>
-    <span class="hero-photo__credit">Image: NASA / JPL / USGS</span>
+  <div class="page-backdrop" aria-hidden="true"></div>
+ 
+  <header class="home-hero fade-in">
+    <h1>Prachi Kar</h1>
+    <p class="home-hero__role">PhD Candidate, Geological Sciences — Arizona State University</p>
+    <span class="home-hero__credit">Backdrop: Earthrise, NASA / Goddard / Arizona State University (LRO)</span>
   </header>
  
   <main>
-    <section class="section">
-      <div class="container--wide">
-        <div class="bio-grid">
-          <div class="bio-grid__photo">
-            <!--
-              Replace this with your headshot. Save your photo into the
-              images/ folder (e.g. images/prachi-kar.jpg) and update the
-              src below to match.
-            -->
-            <img src="images/profile-placeholder.jpg" alt="Prachi Kar" />
-          </div>
-          <div class="bio-grid__text">
-            <span class="eyebrow">About me</span>
-            <p style="margin-top: 0.8rem; font-size: 1.05rem;">
-              I am a Geodynamicist interested in the evolution of Earth and planetary interiors.
-              My research focuses on understanding the structure, dynamics, and long-term
-              evolution of Earth's deep interior using numerical modeling, with a particular
-              interest in the lower mantle and Large Low-Velocity Provinces (LLVPs). I also
-              investigate the interiors of other planetary bodies, including the Moon, to
-              better understand their thermal and compositional evolution.
-            </p>
-            <ul class="tag-row">
-              <li>Geodynamics</li>
-              <li>Planetary Interiors</li>
-              <li>Mantle Convection</li>
-              <li>Deep Earth Structures</li>
-            </ul>
-          </div>
+    <section class="home-section">
+      <div class="bio-grid">
+        <div class="bio-grid__photo">
+          <!--
+            Replace this with your headshot. Save your photo into the
+            images/ folder (e.g. images/prachi-kar.jpg) and update the
+            src below to match.
+          -->
+          <img src="images/profile-placeholder.jpg" alt="Prachi Kar" />
+        </div>
+        <div class="bio-grid__text">
+          <span class="eyebrow">About me</span>
+          <p style="margin-top: 0.8rem;">
+            I am a Geodynamicist interested in the evolution of Earth and planetary interiors.
+            My research focuses on understanding the structure, dynamics, and long-term
+            evolution of Earth's deep interior using numerical modeling, with a particular
+            interest in the lower mantle and Large Low-Velocity Provinces (LLVPs). I also
+            investigate the interiors of other planetary bodies, including the Moon, to
+            better understand their thermal and compositional evolution.
+          </p>
+          <ul class="tag-row">
+            <li>Geodynamics</li>
+            <li>Planetary Interiors</li>
+            <li>Mantle Convection</li>
+            <li>Deep Earth Structures</li>
+          </ul>
         </div>
       </div>
     </section>
  
-    <section class="section">
-      <div class="container">
-        <div class="section__head">
-          <span class="eyebrow">About</span>
-          <h2>A little more about my work</h2>
-        </div>
-        <p>
-          I am advised by Dr. Mingming Li in the School of Earth and Space Exploration at
-          Arizona State University, where I study geodynamics and planetary habitability. My
-          research uses numerical modeling to investigate the dynamic processes that shape the
-          interiors of Earth and other rocky planets over millions to billions of years.
-          Currently, I study how giant structures deep inside Earth's mantle have remained
-          stable throughout Earth's history and how they influence the transport of material
-          from the core into the mantle. I am also exploring the Moon's interior to understand
-          how its internal evolution may have shaped the differences we observe on its surface
-          today.
-        </p>
-        <p>
-          I am currently a fourth-year PhD candidate (started August 2022) and also serve as a
-          Graduate Teaching Assistant, where I enjoy helping students develop an understanding
-          of Earth and planetary sciences.
-        </p>
-        <a href="research.html" class="btn-secondary">See my research →</a>
-      </div>
+    <section class="home-section home-section--about">
+      <p>
+        I am advised by Dr. Mingming Li in the School of Earth and Space Exploration at
+        Arizona State University, where I study geodynamics and planetary habitability. My
+        research uses numerical modeling to investigate the dynamic processes that shape the
+        interiors of Earth and other rocky planets over millions to billions of years.
+        Currently, I study how giant structures deep inside Earth's mantle have remained
+        stable throughout Earth's history and how they influence the transport of material
+        from the core into the mantle. I am also exploring the Moon's interior to understand
+        how its internal evolution may have shaped the differences we observe on its surface
+        today.
+      </p>
+      <p>
+        I am currently a fourth-year PhD candidate (started August 2022) and also serve as a
+        Graduate Teaching Assistant, where I enjoy helping students develop an understanding
+        of Earth and planetary sciences.
+      </p>
+      <a href="research.html" class="btn-secondary">See my research →</a>
     </section>
  
-    <section class="section section--tint">
-      <div class="container--wide">
-        <div class="section__head">
-          <span class="eyebrow">Active research</span>
-          <h2>What I'm currently working on</h2>
+    <section class="home-section home-section--research">
+      <div class="section__head">
+        <span class="eyebrow">Active research</span>
+        <h2>What I'm currently working on</h2>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card__index">01</span>
+          <h3>Long-term survival of large low-velocity provinces</h3>
+          <p>Investigating how the presence of a thin, dense layer at the base of the LLVPs
+            helps them to persist in the lowermost mantle of Earth over geologic time.</p>
         </div>
-        <div class="card-grid">
-          <div class="card">
-            <span class="card__index">01</span>
-            <h3>Long-term survival of large low-velocity provinces</h3>
-            <p>Investigating how the presence of a thin, dense layer at the base of the LLVPs
-              helps them to persist in the lowermost mantle of Earth over geologic time.</p>
-          </div>
-          <div class="card">
-            <span class="card__index">02</span>
-            <h3>Role of core-derived lighter oxides in mantle dynamics</h3>
-            <p>Examining the role of lighter oxides released from the Earth's core in shaping
-              the dynamics of mantle convection.</p>
-          </div>
-          <div class="card">
-            <span class="card__index">03</span>
-            <h3>Hemispheric thermal dichotomy in the lunar mantle</h3>
-            <p>Modeling the thermal asymmetry between the Moon's near and far side to better
-              understand the evolutionary path of its interior.</p>
-          </div>
+        <div class="card">
+          <span class="card__index">02</span>
+          <h3>Role of core-derived lighter oxides in mantle dynamics</h3>
+          <p>Examining the role of lighter oxides released from the Earth's core in shaping
+            the dynamics of mantle convection.</p>
+        </div>
+        <div class="card">
+          <span class="card__index">03</span>
+          <h3>Hemispheric thermal dichotomy in the lunar mantle</h3>
+          <p>Modeling the thermal asymmetry between the Moon's near and far side to better
+            understand the evolutionary path of its interior.</p>
         </div>
       </div>
     </section>
  
-    <div class="quote-block">
+    <div class="home-quote">
       <blockquote>
         &ldquo;I seem to have been only like a boy playing on the seashore and diverting
         myself in now and then finding a smoother pebble or a prettier shell than ordinary,
@@ -141,11 +125,7 @@
     </div>
   </main>
  
-  <footer class="site-footer">
-    <div class="site-footer__inner" style="justify-content: center;">
-      <div class="site-footer__meta">© 2026 Prachi Kar. All rights reserved.</div>
-    </div>
-  </footer>
+  <footer class="home-footer">© 2026 Prachi Kar. All rights reserved.</footer>
  
   <script src="script.js"></script>
 </body>
